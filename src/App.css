@@ -1,0 +1,80 @@
+/* --- Fullscreen Styles --- */
+
+/* Make sure the root elements fill the viewport */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f4f7f6;
+}
+
+/* Make the main App component fill the screen and stack vertically */
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100vw;  /* 100% of the viewport width */
+  background-color: #ffffff;
+}
+
+/* Header styles */
+header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px 20px;
+  flex-shrink: 0; /* Don't let the header shrink */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* Make the main content area fill all remaining space */
+main {
+  flex-grow: 1; /* This makes it fill the rest of the height */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in height/width */
+  overflow: hidden; /* Hide any overflow */
+}
+
+/* Make the chart container fill all of the 'main' area */
+.chart-container {
+  flex-grow: 1; /* This makes it fill the rest of the height */
+  position: relative; /* Required for chart.js responsiveness */
+  
+  /* Remove any old sizing properties */
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%; /* Fill the width of 'main' */
+}
+
+/* Style for the dropdown selector */
+.mango-selector {
+  margin-top: 10px;
+}
+
+.mango-selector label {
+  margin-right: 10px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.mango-selector select {
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Style for the placeholder text when no mango is selected */
+.chart-placeholder {
+  font-size: 1.5em;
+  color: #999;
+  text-align: center;
+  margin-top: 40px;
+}
